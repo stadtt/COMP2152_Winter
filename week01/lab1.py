@@ -14,5 +14,9 @@ print(e)
 
 temperature = 32.6
 
-print(format(temperature, ".3f"))
+print("The temperature today is " + format(temperature, ".3f"))
 
+print("Please Enter your age")
+userAge = int(input())
+
+print("Now showing the shop items filtered by age: " + str(userAge))
