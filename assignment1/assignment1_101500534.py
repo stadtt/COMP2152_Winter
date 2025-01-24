@@ -30,10 +30,33 @@ for value in workout_stats.values():
         workout_list.append(value)
 
 print(workout_list)
-
+'''
 for i in range(3):
     for j in range(1):
         print(workout_list[i][j])
 
 for i in range(1,3):
     print(workout_list[i][2])
+'''
+
+print(f"Alex's Yoga time:  {workout_list[0][0]}")
+print(f"Jamie's Yoga time:   {workout_list[1][0]}")
+print(f"Taylor's Yoga time:   {workout_list[2][0]}")
+
+print(f"Jamie's Yoga time:   {workout_list[1][2]}")
+print(f"Taylor's Yoga time:   {workout_list[2][2]}")
+
+for key, value in workout_stats.items():
+    if sum(value) >= 120:
+        print(f"Great Job staying active {key}! ")
+
+print("Please Enter a friends Name")
+name = input().lower()
+print(name)
+
+for names,value in workout_stats.items():
+    if names == name.lower():
+        print("Is in the system")
+        sum = sum(value)
+        print(f"{name}, worked out for  {sum} minutes total, {value} ")
+
