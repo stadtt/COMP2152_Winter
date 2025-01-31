@@ -81,7 +81,12 @@ loot_options = ["Health Potion", "Poison Potion", "Secret Note", "Leather Boots"
 good_loot_options = ["Health Potion", "Leather Boots"]
 bad_loot_options = ["Poison Potion"]
 
-#lab4 q1 - defining the monster power:
+#lab4 - Q4
+belt = []
+
+
+
+#lab4 - Q1 - defining the monster power:
 monster_powers = {
     "Fire Magic": 2,
     "Freezing Time": 4,
