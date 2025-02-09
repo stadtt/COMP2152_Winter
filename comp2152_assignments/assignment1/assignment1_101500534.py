@@ -7,7 +7,7 @@ Assignment 1
 gym_member = "Alex Alliton" #string
 preferred_weight = 20.5 #float
 highest_reps = 20 #integer
-membership_active = True
+membership_active = True #bool
 
 #c
 #dictonary with string key and values of tuples of ints
@@ -22,7 +22,7 @@ for member,value in workout_stats.items():
 workout_stats.update(workout_total)
 print(workout_stats)
 
-workout_stats = {"Alex": (30,45,29), "Jamie":(10,14,20), "Taylor":(40,50,30)}
+workout_stats = {"alex": (30,45,29), "jamie":(10,14,20), "taylor":(40,50,30)}
 
 
 #E
@@ -53,13 +53,13 @@ for key, value in workout_stats.items():
 
 #H
 print("Please Enter a Friends Name")
-name = input()
+name = input().lower()
 print(name)
 
 check = True
 for names,value in workout_stats.items():
     if(name == names):
-        print("Is in the system")
+        print(name + " is in the system")
         check = False
         sum_tuple = sum(value)
         print(f" Yoga   {workout_stats[name][0]}")
@@ -68,7 +68,7 @@ for names,value in workout_stats.items():
         print(f"{name}, worked out for  {sum_tuple} minutes total")
 
 if check:
-    print(f"Friend {name} not in records")
+    print(f"Friend {name} not found in the records")
 
 
 #i
