@@ -11,7 +11,7 @@ membership_active = True #bool
 
 #c
 #dictonary with string key and values of tuples of ints
-workout_stats = {"Alex": (30,45,29), "Jamie":(10,14,20), "Taylor":(40,50,30)}
+workout_stats = {"alex": (30,45,29), "jamie":(10,14,20), "taylor":(40,50,30)}
 
 #d
 workout_total = {}
