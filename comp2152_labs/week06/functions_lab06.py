@@ -147,5 +147,29 @@ def save_game(winner, hero_name="", num_stars=0):
         file.close()
 
 # Lab 06 - Question 5a
-
+def load_game():
+    try:
+        with open('save.txt', 'r') as file:
+            print("    |    Loading from saved file..")
+            lines = file.readlines()
+            if lines:
+                last_line = lines[-1].strip()
+                print(last_line)
+                return last_line
+    except FileNotFoundError:
+        print("    |    No previous game found. Starting fresh..")
+        return None
 # Lab 06 - Question 5b
+def adjustment_combat_strength(comat_strength, m_comat_strength):
+    last_game = load_game()
+    if last_game:
+        if "Hero" in last_game and "gained" in last_game:
+            num_stars = int(last_game.split()[-2])
+            if num_stars > 3:
+                m_comat_strength += 1
+                print("    |    Increasing the Monster's Power")
+        elif "Monster killed" in last_game:
+            comat_strength += 1
+            print("    |    Increasing the Hero's Power") 
+    else:
+        print("    |    Last game had no effect on the Hero/Monster combat strngth") 
