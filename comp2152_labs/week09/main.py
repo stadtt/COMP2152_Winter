@@ -95,12 +95,15 @@ while m_health_points > 0 and health_points > 0:
     attack_roll = random.choice(small_dice_options)
     if not (attack_roll % 2 == 0):
         input("You strike (Press enter)")
-        # Hero Attacks First
-        m_health_points = function.hero_attacks(combat_strength, m_health_points)
-        if m_health_points != 0:
-            input("The monster strikes (Press enter)!!!")
-            # Monster Attacks Back
-            health_points = function.monster_attacks(m_combat_strength, health_points)
+        try:
+            # Hero Attacks First
+            m_health_points = function.hero_attacks(combat_strength, m_health_points)
+            if m_health_points != 0:
+                input("The monster strikes (Press enter)!!!")
+                # Monster Attacks Back
+                health_points = function.monster_attacks(m_combat_strength, health_points)
+        except ValueError:
+            print("Exception: Invalid Input. Use Integer Values!")
 
     else:
         # Monster Attacks First
