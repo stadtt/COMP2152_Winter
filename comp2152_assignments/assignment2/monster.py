@@ -16,15 +16,15 @@ class Monster:
 
     @property
     def health_points(self):
-        return self.health_points
+        return self.__health_points
 
     @health_points.setter
     def health_points(self,value):
-        self.health_points = value
+        self.__health_points = value
 
     @property
     def combat_strength(self):
-        return self.m_combat_strength
+        return self.__m_combat_strength
 
     @combat_strength.setter
     def combat_strength(self,value):
