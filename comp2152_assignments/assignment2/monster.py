@@ -4,9 +4,9 @@ import random
 class Monster:
 
     def __init__(self):
-        small_dice_options = list(range(1, 7))
-        self.m_combat_strength = random.choice(small_dice_options)
-        self.m_health_points = random.choice(small_dice_options)
+
+        self.m_combat_strength = random.randrange(1, 7)
+        self.m_health_points = random.randrange(1, 7)
 
     def __del__(self):
         print(" The Monster object is being destroyed by the garbage collector")
