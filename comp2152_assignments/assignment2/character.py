@@ -9,3 +9,4 @@ class Character:
 
     def __del__(self):
          print("The character is destroyed")
+
