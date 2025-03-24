@@ -137,21 +137,37 @@ def inception_dream(num_dream_lvls):
 
 # Lab 06 - Question 3 and 4
 def save_game(winner, hero_name="", num_stars=0):
+    monsterskilled = 0
+    try:
+        with open("save.txt","r") as file:
+            lines = file.readlines()
+            if lines.startswith("Total monsters killed:"):
+                        monsterskilled = int(lines.split(":")[1].strip())
+    except:
+        pass
+
     with open("save.txt", "a") as file:
         if winner == "Hero":
+            monsterskilled += 1
+            file.write(f"Total monsters killed: {monsterskilled}\n")
             file.write(f"Hero {hero_name} has killed a monster and gained {num_stars} stars.\n")
         elif winner == "Monster":
             file.write("Monster has killed the hero previously\n")
 
 # Lab 06 - Question 5a
 def load_game():
+    monsterskilled = 0
     try:
         with open("save.txt", "r") as file:
             print("    |    Loading from saved file ...")
             lines = file.readlines()
+            for line in lines:
+                if line.startswith("Total monsters killed:"):
+                    monsterskilled = int(line.split(":")[1].strip())
             if lines:
                 last_line = lines[-1].strip()
                 print(last_line)
+                print(f" Hero has previously killed this many monster: {monsterskilled}" )
                 return last_line
     except FileNotFoundError:
         print("No previous game found. Starting fresh.")
